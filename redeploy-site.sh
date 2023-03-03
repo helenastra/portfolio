@@ -1,11 +1,8 @@
 #!/bin/bash
 
-### needs testing as of 02/18/2023
-
-
 tmux kill-server
 
-cd ~/portfolio_template_with_picocss/project-triple-7/
+cd ~/mlh/project-triple-7/
 
 git fetch && git reset origin/main -hard
 
