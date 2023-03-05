@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="">
+  <head>
+    <title>My Timeline</title>
+  </head>
+  <body>
+    <h1>My Timeline</h1>
+
+    <!-- Form to create a new timeline post -->
+    <form action="/api/timeline_post" method="POST">
+      <label for="name">Name:</label>
+      <input type="text" id="name" name="name" required><br>
+
+      <label for="email">Email:</label>
+      <input type="email" id="email" name="email" required><br>
+
+      <label for="content">Content:</label>
+      <textarea id="content" name="content" required></textarea><br>
+
+      <input type="submit" value="Submit">
+    </form>
+
+    <!-- Display all timeline posts -->
+    <ul>
+      {% for post in timeline_posts %}
+        <li>{{ post.name }} - {{ post.email }} - {{ post.content }}</li>
+      {% endfor %}
+    </ul>
+  </body>
+</html>
