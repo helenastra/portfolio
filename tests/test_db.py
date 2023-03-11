@@ -2,6 +2,7 @@
 import unittest
 
 from peewee import SqliteDatabase
+from playhouse.shortcuts import model_to_dict
 
 from app import TimelinePost
 
@@ -39,7 +40,23 @@ class BaseTestCase(unittest.TestCase):
         second_post = TimelinePost.create(name='Jane', email='jane@mail.com',
                                          content='Hello World')
         assert second_post.id == 2
-        
+        timeline_posts = [model_to_dict(p)
+                          for p in
+                          TimelinePost.select().order_by(
+                              TimelinePost.created_at.desc())]
+        # print(timeline_posts)
+
+        assert timeline_posts[1]['name'] == first_post.name
+        assert timeline_posts[1]['email'] == first_post.email
+        assert timeline_posts[1]['content'] == first_post.content
+        assert timeline_posts[1]['id'] == first_post.id
+        assert timeline_posts[0]['name'] == second_post.name
+        assert timeline_posts[0]['email'] == second_post.email
+        assert timeline_posts[0]['content'] == second_post.content
+        assert timeline_posts[0]['id'] == second_post.id
+
+        # self.assertCountEqual(timeline_posts[1], first_post)
+
 
 
 
