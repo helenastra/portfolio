@@ -73,7 +73,7 @@ def page_not_found(e):
 def post_time_line_post():
     try:
         name = request.form['name']
-        if name == "" or name == None:
+        if (name == "" or name == None):
             return 'Invalid name', 400
     except:
         return 'Invalid name', 400
