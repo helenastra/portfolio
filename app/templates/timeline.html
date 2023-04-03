@@ -2,6 +2,66 @@
 <html lang="">
   <head>
     <title>Timeline</title>
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+        margin: 0;
+        padding: 0;
+      }
+
+      h1 {
+        text-align: center;
+        margin-top: 20px;
+      }
+
+      form {
+        margin: 20px auto;
+        width: 50%;
+      }
+
+      label {
+        display: block;
+        margin-bottom: 5px;
+      }
+
+      input[type="text"],
+      input[type="email"],
+      textarea {
+        width: 100%;
+        padding: 10px;
+        margin-bottom: 10px;
+        border-radius: 5px;
+        border: 1px solid #ccc;
+      }
+
+      input[type="submit"] {
+        background-color: #4CAF50;
+        color: white;
+        padding: 10px 20px;
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+      }
+
+      input[type="submit"]:hover {
+        background-color: #45a049;
+      }
+
+      ul {
+        list-style: none;
+        margin: 20px auto;
+        width: 50%;
+        padding: 0;
+      }
+
+      li {
+        background-color: #f9f9f9;
+        padding: 10px;
+        margin-bottom: 10px;
+        border-radius: 5px;
+        border: 1px solid #ccc;
+      }
+    </style>
   </head>
   <body>
     <h1>Timeline</h1>
@@ -9,13 +69,13 @@
     <!-- Form to create a new timeline post -->
     <form id="timeline-form">
       <label for="name">Name:</label>
-      <input type="text" id="name" name="name" required><br>
+      <input type="text" id="name" name="name" required>
 
       <label for="email">Email:</label>
-      <input type="email" id="email" name="email" required><br>
+      <input type="email" id="email" name="email" required>
 
       <label for="content">Content:</label>
-      <textarea id="content" name="content" required></textarea><br>
+      <textarea id="content" name="content" required></textarea>
 
       <input type="submit" value="Submit">
     </form>
