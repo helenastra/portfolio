@@ -17,7 +17,7 @@ class AppTestCase(unittest.TestCase):
         assert response.status_code == 200
         html = response.get_data(as_text=True)
         assert "<title>MLH Fellowship</title>" in html
-        assert "<h2>MLH fellowship hackathon portfolio</h2>" in html
+        assert "<h2>MLH Fellowship Portfolio</h2>" in html
 
     def test_timeline(self):
         response = self.client.get("/api/timeline_post")
